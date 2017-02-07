@@ -1,0 +1,20 @@
+
+
+<!--//  显示 特定标签 中   作者，   时间，标题。-->
+
+<%- include header %>
+<ul class="archive">
+    <% var lastday = 0 %>
+    <% posts.forEach(function (post, index) { %>
+    <% if (lastday != post.time.day) { %>
+    <li><h3><%= post.time.day %></h3></li>
+    <% lastday = post.time.day } %>
+
+
+    <li><time>日期：<%= post.time.minute %></time></li>
+    作者：<a href="/u/<%= post.name %>"><%= post.name %></a>
+
+    <li>标题：<a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></li>
+    <% }) %>
+</ul>
+<%- include footer %>

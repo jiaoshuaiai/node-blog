@@ -1,0 +1,16 @@
+<%- include header %>
+<ul class="archive">
+    搜索结果：
+    <% var lastday = 0 %>
+    <% posts.forEach(function (post, index) { %>
+    <% if(lastday != post.time.day) { %>
+    <li><h3><%= post.time.day %></h3></li>
+    <% lastday = post.time.day } %>
+    <li><time>日期：<%= post.time.minute %></time></li>
+    <li>    作者：<a href="/u/<%= post.name %>"><%= post.name %></a>
+    </li>
+    <li>标题：<a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><%= post.title %></a></li>
+
+    <% }) %>
+</ul>
+<%- include footer %>

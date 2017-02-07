@@ -1,0 +1,15 @@
+<% include header %>
+<form method="post" action="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+    <label for="title">标题:</label><br>
+    <input type="text" name="title" value="<%= post.title %>" disabled="disabled" id="title"><br>
+
+    <label>标签：</label><br>
+    <input type="text" name="tag1" value="<%= post.tags[0] %>" disabled="disabled" />
+    <input type="text" name="tag2" value="<%= post.tags[1] %>" disabled="disabled" />
+    <input type="text" name="tag3" value="<%= post.tags[2] %>" disabled="disabled" /><br />
+    <label for="text">正文:</label><br>
+    <textarea cols="100" rows="10" name="post" id="text"><%= post.post %></textarea>
+    <input type="submit" value="提交">
+    文章编辑：只能编辑内容，希望可以编辑  标题 和  标签    ？？？？
+</form>
+<% include footer %>
